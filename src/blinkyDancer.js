@@ -1,10 +1,11 @@
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this);
-  this.top = top;
-  this.left = left;
+  // this.top = top;
+  // this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
+  this.setPosition(top, left);
   this.step();
- // this.setPosition(this.top, this.left);
+  //this.addClass('blinky-dancer');
 };
 
 
@@ -14,7 +15,6 @@ BlinkyDancer.prototype.constructor = BlinkyDancer;
 
 
 BlinkyDancer.prototype.step = function() {
-    console.log(this);
     Dancer.prototype.step.call(this);
     this.$node.toggle();
   };
