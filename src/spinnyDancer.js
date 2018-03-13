@@ -1,3 +1,4 @@
+//squidward
 var SpinnyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this);
   this.timeBetweenSteps = timeBetweenSteps;
@@ -16,7 +17,7 @@ SpinnyDancer.prototype.constructor = SpinnyDancer;
 
 SpinnyDancer.prototype.step = function() {
     Dancer.prototype.step.call(this);
-    this.$node.fadeToggle();
+    //this.$node.fadeToggle();
     this.setPosition(Math.floor(Math.random() * Math.floor(1000), Math.floor(Math.random() * Math.floor(1000))));
   };
 

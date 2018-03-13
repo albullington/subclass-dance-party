@@ -27,6 +27,14 @@ $(document).ready(function() {
       $("body").width() * Math.random(),
       Math.random() * 5000
     );
+    
+    dancer.$node.on('mouseover', function() {
+      console.log('mouse works');
+      for (var i = 0; i < window.dancers.length; i++) {
+        window.dancers[i] = window.dancers[Math.floor(Math.random() * window.dancers.length)];
+          
+      }
+    });
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
@@ -40,21 +48,13 @@ $(document).ready(function() {
       window.dancers[i].$node.css(styleSettings);
     }
   });
-
-  $('.dancer').on('mouseover', function() {
-    //$(this).find('.spinny-dancer').text('mouseclicked');
-    console.log('this mouseover works');
-    console.log(this);
-    // for (var i = 0; i < window.dancers.length; i++) {
-    //   window.dancers[i] = window.dancers[i - 1];
-      //   var styleSettings = {
-      //     top: 0,
-      //     left: 100
-      //   };
-      // window.dancers[i].$node.css(styleSettings);
-    // }
+  
+  $('.social').on('click', function(event){
+    var greeterIndex = Math.floor(Math.random() * window.dancers.length)
+    var talkerIndex = Math.floor(Math.random() * window.dancers.length)
+    window.dancers[greeterIndex].$node.prepend('<img src="hello.png">');
+    window.dancers[talkerIndex].$node.prepend('<img src="goodbye.png">')
   });
-
 
 });
 

@@ -1,3 +1,4 @@
+//snail
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this);
 
@@ -16,7 +17,7 @@ BlinkyDancer.prototype.constructor = BlinkyDancer;
 
 BlinkyDancer.prototype.step = function() {
     Dancer.prototype.step.call(this);
-    this.$node.toggle();
+    //this.$node.toggle();
     this.setPosition(Math.floor(Math.random() * Math.floor(1000), Math.floor(Math.random() * Math.floor(1000))));
   };
 

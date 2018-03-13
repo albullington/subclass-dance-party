@@ -1,3 +1,4 @@
+//sponge
 var SlidingDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this);
   this.timeBetweenSteps = timeBetweenSteps;
