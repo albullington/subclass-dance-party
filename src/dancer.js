@@ -9,12 +9,13 @@ Dancer.prototype.step = function() {
   };
 
 Dancer.prototype.setPosition = function(top, left) {
-    this.styleSettings = {
+    var styleSettings = {
         top: top,
         left: left
     };
-    this.$node.css(this.styleSettings);
+    this.$node.css(styleSettings);
   };
+
 
   // now that we have defined the dancer object, we can start setting up important parts of it by calling the methods we wrote
   // this one sets the position to some random default point within the body

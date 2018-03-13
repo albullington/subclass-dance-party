@@ -14,6 +14,10 @@ body, a:link, a:visited, a:active{
   padding:5px 12px;
   float:right;
 }
+.title, .lineUpButton{
+  padding:5px 12px;
+  float:right;
+}
 .topbar{
   height:32px;
   background-color: #555;
@@ -22,10 +26,15 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid green;
-  border-radius:10px;
-  position:absolute;
+  position: absolute;
 }
 .blinky-dancer{
-  border:50px solid red;
+  
+}
+.spinny-dancer{
+  
+}
+.sliding-dancer{
+  
+  
 }

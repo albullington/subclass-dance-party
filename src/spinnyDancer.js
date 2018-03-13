@@ -1,22 +1,24 @@
-var BlinkyDancer = function(top, left, timeBetweenSteps) {
+var SpinnyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this);
-
+  // this.top = top;
+  // this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
   this.setPosition(top, left);
   this.step();
-  this.$node.addClass('blinky-dancer');
-  this.$node.append('<img src="snail.gif">');
+  this.$node.addClass('spinny-dancer');
+  this.$node.append('<img src="source.gif">');
+  //console.log(this);
 };
 
 
-BlinkyDancer.prototype = Object.create(Dancer.prototype);
-BlinkyDancer.prototype.constructor = BlinkyDancer;
+SpinnyDancer.prototype = Object.create(Dancer.prototype);
+SpinnyDancer.prototype.constructor = SpinnyDancer;
   
 
 
-BlinkyDancer.prototype.step = function() {
+SpinnyDancer.prototype.step = function() {
     Dancer.prototype.step.call(this);
-    this.$node.toggle();
+    this.$node.fadeToggle();
   };
 
 

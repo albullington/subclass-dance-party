@@ -1,23 +1,23 @@
-var BlinkyDancer = function(top, left, timeBetweenSteps) {
+var SlidingDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this);
-
   this.timeBetweenSteps = timeBetweenSteps;
   this.setPosition(top, left);
   this.step();
-  this.$node.addClass('blinky-dancer');
-  this.$node.append('<img src="snail.gif">');
+  this.$node.addClass('sliding-dancer');
+  this.$node.append('<img src="spongebob.gif">');
 };
 
 
-BlinkyDancer.prototype = Object.create(Dancer.prototype);
-BlinkyDancer.prototype.constructor = BlinkyDancer;
+SlidingDancer.prototype = Object.create(Dancer.prototype);
+SlidingDancer.prototype.constructor = SlidingDancer;
   
 
 
-BlinkyDancer.prototype.step = function() {
+SlidingDancer.prototype.step = function() {
     Dancer.prototype.step.call(this);
-    this.$node.toggle();
+    //this.$node.slideUp();
   };
+
 
 
     // call the old version of step at the beginning of any call to this new version of step
