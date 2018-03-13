@@ -25,10 +25,9 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
-      Math.random() * 3000
+      Math.random() * 5000
     );
     window.dancers.push(dancer);
-
     $('body').append(dancer.$node);
   });
 
@@ -40,6 +39,20 @@ $(document).ready(function() {
         };
       window.dancers[i].$node.css(styleSettings);
     }
+  });
+
+  $('.dancer').on('mouseover', function() {
+    //$(this).find('.spinny-dancer').text('mouseclicked');
+    console.log('this mouseover works');
+    console.log(this);
+    // for (var i = 0; i < window.dancers.length; i++) {
+    //   window.dancers[i] = window.dancers[i - 1];
+      //   var styleSettings = {
+      //     top: 0,
+      //     left: 100
+      //   };
+      // window.dancers[i].$node.css(styleSettings);
+    // }
   });
 
 

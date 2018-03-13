@@ -1,7 +1,5 @@
 var SpinnyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this);
-  // this.top = top;
-  // this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
   this.setPosition(top, left);
   this.step();
@@ -19,6 +17,7 @@ SpinnyDancer.prototype.constructor = SpinnyDancer;
 SpinnyDancer.prototype.step = function() {
     Dancer.prototype.step.call(this);
     this.$node.fadeToggle();
+    this.setPosition(Math.floor(Math.random() * Math.floor(1000), Math.floor(Math.random() * Math.floor(1000))));
   };
 
 

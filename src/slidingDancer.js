@@ -15,7 +15,7 @@ SlidingDancer.prototype.constructor = SlidingDancer;
 
 SlidingDancer.prototype.step = function() {
     Dancer.prototype.step.call(this);
-    //this.$node.slideUp();
+    this.setPosition(Math.floor(Math.random() * Math.floor(1000), Math.floor(Math.random() * Math.floor(1000))));
   };
 
 
