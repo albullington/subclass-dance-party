@@ -10,7 +10,7 @@ var SlidingDancer = class extends Dancer {
   }
   step () {
     super.step.call(this);
-    this.setPosition(Math.floor(Math.random() * Math.floor(1000), Math.floor(Math.random() * Math.floor(1000))));
+    this.setPosition(Math.floor(Math.random() * Math.floor(500), Math.floor(Math.random() * Math.floor(500))));
   };
 };
   
