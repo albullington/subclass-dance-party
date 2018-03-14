@@ -15,6 +15,7 @@ $(document).ready(function() {
      * A new object of the given type will be created and added
      * to the stage.
      */
+    
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
     // get the maker function for the kind of dancer we're supposed to make
@@ -22,7 +23,7 @@ $(document).ready(function() {
 
     // make a dancer with a random position
 
-    var dancer = new dancerMakerFunction(
+    var dancer = new dancerMakerFunction (
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 5000
@@ -30,10 +31,7 @@ $(document).ready(function() {
     
     dancer.$node.on('mouseover', function() {
       console.log('mouse works');
-      for (var i = 0; i < window.dancers.length; i++) {
-        window.dancers[i] = window.dancers[Math.floor(Math.random() * window.dancers.length)];
-          
-      }
+      dancer.$node.addClass('mouse-over')
     });
     window.dancers.push(dancer);
     $('body').append(dancer.$node);

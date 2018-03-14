@@ -1,27 +1,21 @@
 //snail
-var BlinkyDancer = function(top, left, timeBetweenSteps) {
-  Dancer.call(this);
+var BlinkyDancer = class extends Dancer {
+  constructor(top, left, timeBetweenSteps) {
+    super();
+    this.timeBetweenSteps = timeBetweenSteps;
+    this.setPosition(top, left);
+    this.step();
+    this.$node.addClass('blinky-dancer');
+    this.$node.append('<img src="snail.gif">');
+  }
 
-  this.timeBetweenSteps = timeBetweenSteps;
-  this.setPosition(top, left);
-  this.step();
-  this.$node.addClass('blinky-dancer');
-  this.$node.append('<img src="snail.gif">');
-};
-
-
-BlinkyDancer.prototype = Object.create(Dancer.prototype);
-BlinkyDancer.prototype.constructor = BlinkyDancer;
-  
-
-
-BlinkyDancer.prototype.step = function() {
-    Dancer.prototype.step.call(this);
+step() {
+    super.step.call(this);
     //this.$node.toggle();
     this.setPosition(Math.floor(Math.random() * Math.floor(1000), Math.floor(Math.random() * Math.floor(1000))));
   };
 
-
+};
     // call the old version of step at the beginning of any call to this new version of step
     
     // toggle() is a jQuery method to show/hide the <span> tag.

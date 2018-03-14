@@ -1,25 +1,20 @@
 //squidward
-var SpinnyDancer = function(top, left, timeBetweenSteps) {
-  Dancer.call(this);
-  this.timeBetweenSteps = timeBetweenSteps;
-  this.setPosition(top, left);
-  this.step();
-  this.$node.addClass('spinny-dancer');
-  this.$node.append('<img src="source.gif">');
-  //console.log(this);
-};
-
-
-SpinnyDancer.prototype = Object.create(Dancer.prototype);
-SpinnyDancer.prototype.constructor = SpinnyDancer;
-  
-
-
-SpinnyDancer.prototype.step = function() {
-    Dancer.prototype.step.call(this);
+var SpinnyDancer = class extends Dancer {
+  constructor (top, left, timeBetweenSteps) {
+    super();
+    this.timeBetweenSteps = timeBetweenSteps;
+    this.setPosition(top, left);
+    this.step();
+    this.$node.addClass('spinny-dancer');
+    this.$node.append('<img src="source.gif">');
+  }
+  step () {
+    super.step.call(this);
     //this.$node.fadeToggle();
     this.setPosition(Math.floor(Math.random() * Math.floor(1000), Math.floor(Math.random() * Math.floor(1000))));
   };
+};
+
 
 
     // call the old version of step at the beginning of any call to this new version of step
@@ -32,3 +27,4 @@ SpinnyDancer.prototype.step = function() {
 
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
+  //top, left, timeBetweenSteps

@@ -1,23 +1,21 @@
 //sponge
-var SlidingDancer = function(top, left, timeBetweenSteps) {
-  Dancer.call(this);
-  this.timeBetweenSteps = timeBetweenSteps;
-  this.setPosition(top, left);
-  this.step();
-  this.$node.addClass('sliding-dancer');
-  this.$node.append('<img src="spongebob.gif">');
+var SlidingDancer = class extends Dancer {
+  constructor (top, left, timeBetweenSteps) {
+    super();
+    this.timeBetweenSteps = timeBetweenSteps;
+    this.setPosition(top, left);
+    this.step();
+    this.$node.addClass('sliding-dancer');
+    this.$node.append('<img src="spongebob.gif">');
+  }
+  step () {
+    super.step.call(this);
+    this.setPosition(Math.floor(Math.random() * Math.floor(1000), Math.floor(Math.random() * Math.floor(1000))));
+  };
 };
-
-
-SlidingDancer.prototype = Object.create(Dancer.prototype);
-SlidingDancer.prototype.constructor = SlidingDancer;
   
 
 
-SlidingDancer.prototype.step = function() {
-    Dancer.prototype.step.call(this);
-    this.setPosition(Math.floor(Math.random() * Math.floor(1000), Math.floor(Math.random() * Math.floor(1000))));
-  };
 
 
 
